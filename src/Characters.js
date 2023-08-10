@@ -8,7 +8,7 @@ const Characters = () => {
      
     const [facts,setFacts] = useState([])   
     const [currentPage, setcurrentPage] = useState(1);
-    const [postPerPage] = useState(8);
+    const POST_PER_PAGE = 8 
     useEffect(() => { 
         setIsLoading(true); 
         const controller = new AbortController();
@@ -20,8 +20,8 @@ const Characters = () => {
             controller.abort();
         }
     },[])   
-    const firstText = currentPage * postPerPage;
-    const indexText = firstText - postPerPage;
+    const firstText = currentPage * POST_PER_PAGE;
+    const indexText = firstText - POST_PER_PAGE;
     const CurrentPost = facts.slice(indexText, firstText);
     const paginate = (postNumber) => setcurrentPage(postNumber); 
     const renderPage = (
@@ -37,7 +37,7 @@ const Characters = () => {
             </div> 
             </div> 
             <Pagination
-                postPerPage={postPerPage}
+                POST_PER_PAGE={POST_PER_PAGE}
                 totalPosts={facts.length}
                 paginate={paginate}
         />

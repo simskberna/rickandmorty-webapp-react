@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 
-const Pagination = ({ totalPosts, postPerPage, paginate }) => {
+const Pagination = ({ totalPosts, POST_PER_PAGE, paginate }) => {
   const postNumbers = [];  
-  for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalPosts / POST_PER_PAGE); i++) {
     postNumbers.push(i);
   }    
   const[prev,setPrev] = useState(0);
