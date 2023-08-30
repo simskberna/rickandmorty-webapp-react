@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react"
+
  import Characters from "./Components/Characters";
  import { BrowserRouter , Routes, Route} from "react-router-dom"; 
  import DetailPage from "./Components/DetailPage";
