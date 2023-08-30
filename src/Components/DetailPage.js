@@ -9,7 +9,7 @@ const DetailPage = () => {
   let [fetchedData, updateFetchedData] = useState([]);
   let { name, location, origin, gender, image, status, species } = fetchedData;
   const handleStyle = (status) => {
-    if (status == 'Alive') {
+    if (status === 'Alive') {
       return {color : '#00f67b'}
     } else if (status === 'Dead') { 
       return {color : '#ff2c2c' }
@@ -33,7 +33,7 @@ const DetailPage = () => {
        <div className="cart shadow-2xl rounded-lg lg:w-1/3 w-full  lg:m-20 m-10 flex flex-col flex-wrap items-center justify-center">
     <div className="cart-header bg-[#ffabab34] relative flex items-center justify-center h-[200px] w-full  rounded-t-lg">
       <div className="image-circle flex items-center absolute justify-center rounded-full border-4 border-[#fff] h-[150px] w-[150px]">
-        <img className="image h-full w-full rounded-full" src={image}></img>
+        <img className="image h-full w-full rounded-full" alt="profile" src={image}></img>
       </div>
     </div>
     <div className="cart-body bg-[#ff525234] relative flex flex-col justify-around items-center h-[300px] w-full rounded-b-lg">
