@@ -2,7 +2,8 @@
  import Characters from "./Components/Characters";
  import { BrowserRouter , Routes, Route} from "react-router-dom"; 
  import DetailPage from "./Components/DetailPage";
- import Header from './Components/Header';
+import Header from './Components/Header';
+ import React  from "react";
 function App() {
   
   return (
