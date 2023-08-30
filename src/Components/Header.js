@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom' 
-import LogoSource from './assets/rickandmortylogo.png'
+import LogoSource from '../assets/rickandmortylogo.png'
 const Header = () => {  
  
   const homeIcon = (
@@ -18,18 +18,15 @@ const Header = () => {
   )
   return (  
     <div className="px-4 md:px-16 dark:bg-gray-800 border-b border-blue-400 py-2 grid grid-cols-2 sticky z-10 bg-white"> 
-        <div className="md:inline-flex md:w-2/3">  
-           <img className="w-full" src={LogoSource} alt="logo"/>  
-        </div> 
-      <Link   
+        <Link   
             to='/' 
-            className="col-lg-4 gap-2 md:gap-10 lg:gap-16 flex justify-end  items-center col-md-6 col-sm-6 col-12 text-dark "
+            className="col-lg-4 gap-2 md:gap-10 lg:gap-16 flex justify-start  items-center col-md-6 col-sm-6 col-12 text-dark "
           >
-            <div className='bg-[#fff] rounded-lg flex justify-center items-center shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]'>
-              {homeIcon}
-            </div>
-             
-        </Link> 
+          <div className="md:inline-flex md:w-2/3">  
+            <img className="w-full" src={LogoSource} alt="logo"/>  
+          </div>    
+        </Link>
+    
     </div>   
   )
 }

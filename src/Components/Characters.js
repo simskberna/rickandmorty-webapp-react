@@ -1,14 +1,14 @@
 import React,{useEffect, useState} from "react"
-import { getData } from "./Api" 
+import { getData } from "../Api"  
 import SingleCharacter from "./SingleCharacter"    
 import Pagination from "./Pagination"; 
-import LoadingSpinner from './LoadingSpinner'  
+import LoadingSpinner from './LoadingSpinner'   
 const Characters = () => {
-    const [isLoading, setIsLoading] = useState(false);
-     
+    const [isLoading, setIsLoading] = useState(false); 
     const [facts,setFacts] = useState([])   
     const [currentPage, setcurrentPage] = useState(1);
-    const POST_PER_PAGE = 8 
+    
+    const POST_PER_PAGE = 5
     useEffect(() => { 
         setIsLoading(true); 
         const controller = new AbortController();
@@ -19,16 +19,18 @@ const Characters = () => {
         return () => {
             controller.abort();
         }
-    },[])   
+    },[])     
+    const paginate = (postNumber) => {setcurrentPage(postNumber)};   
+
     const firstText = currentPage * POST_PER_PAGE;
     const indexText = firstText - POST_PER_PAGE;
     const CurrentPost = facts.slice(indexText, firstText);
-    const paginate = (postNumber) => setcurrentPage(postNumber); 
+   
     const renderPage = (
-        <div>  
+        <div>   
             
-            <div className="overflow-hidden bg-white dark:bg-gray-800 pt-10 md:pt-0 lg:pt-0">  
-            <div className="mt-2 p-4 md:p-16 pt-0 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 "> 
+            <div className="h-full bg-white dark:bg-gray-800 pt-10 md:pt-0 lg:pt-0">  
+            <div className="w-full grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8 p-10 lg:p-20"> 
             
                 {CurrentPost.map((chars, id) => {
                 return <SingleCharacter key={id} chars={chars} src={chars.image}/>;
@@ -36,11 +38,13 @@ const Characters = () => {
                 
             </div> 
             </div> 
-            <Pagination
+           
+           {<Pagination
                 POST_PER_PAGE={POST_PER_PAGE}
                 totalPosts={facts.length}
-                paginate={paginate}
-        />
+                pageNumber={currentPage}
+                paginate={paginate}  
+        /> }
         </div> 
     )
     return(  
@@ -50,5 +54,7 @@ const Characters = () => {
         
     )
       
+ 
+  
 }
 export default Characters

@@ -1,5 +1,5 @@
 import React from 'react' 
-import "./index.css";
+import "../index.css";
 const LoadingSpinner = () => {
   return (
     <div className="spinner-container h-screen bg-white dark:bg-gray-800">

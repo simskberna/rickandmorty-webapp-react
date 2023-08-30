@@ -12,7 +12,7 @@ const SingleCharacter = ({chars,src}) => {
         className=" rounded-md col-lg-4 col-md-6 col-sm-6 col-12 mb-4 p-2 pb-4 position-relative text-dark  shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
       > 
         <div key={chars.id} className="group relative">
-        <div className="min-h-80 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+        <div className="min-h-20 aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
         <LazyLoadImage 
             src={src}
             alt={chars.name}
@@ -42,7 +42,7 @@ const SingleCharacter = ({chars,src}) => {
         </div>
           <div className='h-11 flex items-end'>
             <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded text-teal-600 bg-teal-200
-              uppercase last:mr-0 mr-1">
+               last:mr-0 mr-1">
               {chars.origin.name}
             </span>
           </div>
