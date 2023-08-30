@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 # To see the live version:
-https://dev.d38uuwxhk4pxkz.amplifyapp.com](http://rickandmortybucket2023.s3-website-us-west-1.amazonaws.com/
+http://rickandmortybucket2023.s3-website-us-west-1.amazonaws.com
 
 
 This project was bootstrapped with [Create React App](https://gitub.com/facebook/create-react-app).
